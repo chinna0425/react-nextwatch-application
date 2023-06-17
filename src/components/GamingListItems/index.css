@@ -1,0 +1,34 @@
+.gaminglinkstyle {
+  text-decoration: none;
+}
+.gaminglist-container {
+  width: 290px;
+  margin-right: 20px;
+  margin-bottom: 35px;
+}
+
+.gaminglist-item-thumbnailimage {
+  width: 100%;
+}
+
+.gaminglist-view-para {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #000000;
+}
+.gaming-theme-title {
+  color: #f1f5f9;
+}
+@media screen and (max-width: 567px) {
+  .gaminglinkstyle {
+    text-decoration: none;
+    width: 46%;
+    margin: 6px;
+    margin-bottom: 0px;
+  }
+  .gaminglist-container {
+    width: 100%;
+  }
+}

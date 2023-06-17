@@ -1,0 +1,7 @@
+.gamingrightbar-unordered-list {
+  width: 97%;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}

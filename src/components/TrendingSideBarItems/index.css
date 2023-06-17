@@ -1,0 +1,13 @@
+.trendingrightbar-unordered-list {
+  width: 100%;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 60px;
+}
+@media screen and (max-width: 567px) {
+  .trendingrightbar-unordered-list {
+    padding-left: 10px;
+  }
+}

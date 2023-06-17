@@ -1,0 +1,87 @@
+.home-link-style {
+  text-decoration: none;
+  color: #313131;
+  cursor: pointer;
+  outline: none;
+}
+.left-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+.left-sidebar-theme {
+  background-color: #424242;
+  color: #ffffff;
+}
+
+.home-icons-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border-width: 0px;
+}
+.home-flex-icons-container {
+  margin-top: 20px;
+}
+.home-icons-styles {
+  width: 31px;
+  height: 31px;
+  margin-right: 10px;
+  color: #313131;
+}
+.home-icons-title {
+  font-size: 22px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  padding: 1px;
+}
+.home-contact-log-container {
+  display: flex;
+  align-items: center;
+}
+.home-contact-title {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #181818;
+}
+.home-contact-logos {
+  width: 40px;
+}
+.log-margin {
+  margin-right: 15px;
+}
+.home-contact-description {
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.theme-para-color {
+  color: #f1f5f9;
+}
+.home-icon {
+  color: #ff0000;
+}
+.home-back {
+  width: 97%;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  padding: 10px;
+  height: 40px;
+  color: #000000;
+}
+.home-button-nav {
+  color: #000000;
+}
+@media screen and (max-width: 576px) {
+  .left-sidebar {
+    display: none;
+  }
+}
