@@ -34,7 +34,7 @@ class VideoDetailsRoute extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
-    const jwt = Cookies.get('jwtToken')
+    const jwt = Cookies.get('jwt_token')
     const options = {
       headers: {
         Authorization: `Bearer ${jwt}`,
@@ -87,7 +87,7 @@ class VideoDetailsRoute extends Component {
           videoUrl,
           viewCount,
         } = videosList
-        const {addToSavedList, themeChange} = value
+        const {addToSavedList, themeChange, onDeleteVideo} = value
         const {name, profileImageUrl, subscriberCount} = channel
         const onLikeButton = () => {
           this.setState(prev => ({like: !prev.like, dislike: false}))
@@ -98,12 +98,21 @@ class VideoDetailsRoute extends Component {
         }
 
         const onSavedList = () => {
-          this.setState(prev => ({
-            dislike: false,
-            like: !prev.like,
-            saved: !prev.saved,
-          }))
-          addToSavedList(videosList)
+          if (saved === false) {
+            this.setState(prev => ({
+              dislike: false,
+              like: !prev.like,
+              saved: !prev.saved,
+            }))
+            addToSavedList(videosList)
+          } else {
+            this.setState(prev => ({
+              dislike: false,
+              like: !prev.like,
+              saved: !prev.saved,
+            }))
+            onDeleteVideo(videosList)
+          }
         }
         return (
           <div className="videoItem-container">
@@ -136,7 +145,7 @@ class VideoDetailsRoute extends Component {
                   <p
                     className={`video-icon-para ${
                       themeChange ? 'video-theme-color' : null
-                    }`}
+                    } ${like ? 'like-color' : null}`}
                   >
                     Like
                   </p>
@@ -154,7 +163,7 @@ class VideoDetailsRoute extends Component {
                   <p
                     className={`video-icon-para ${
                       themeChange ? 'video-theme-color' : null
-                    }`}
+                    } ${dislike ? 'like-color' : null}`}
                   >
                     Dislike
                   </p>
@@ -172,7 +181,7 @@ class VideoDetailsRoute extends Component {
                   <p
                     className={`video-icon-para ${
                       themeChange ? 'video-theme-color' : null
-                    }`}
+                    } ${saved ? 'like-color' : null}`}
                   >
                     {saved ? 'Saved' : 'Save'}
                   </p>

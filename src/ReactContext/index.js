@@ -7,5 +7,6 @@ const ContextOptions = React.createContext({
   addToSavedList: () => {},
   onLightDarkChange: () => {},
   onHamBurger: () => {},
+  onDeleteVideo: () => {},
 })
 export default ContextOptions

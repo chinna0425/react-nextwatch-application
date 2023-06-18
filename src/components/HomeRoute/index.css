@@ -40,6 +40,9 @@
 .right-sidebar-description-container {
   margin-left: 0px;
 }
+.close-banner {
+  display: none;
+}
 .title {
   margin-top: 0px;
 }
@@ -70,6 +73,8 @@
   align-self: flex-start;
   margin-top: 0px;
   margin-right: 20px;
+  cursor: pointer;
+  outline: none;
 }
 
 .home-items-search-container {

@@ -20,7 +20,7 @@ class NavbarHeader extends Component {
 
           const onChangeLogOut = () => {
             const {history} = this.props
-            Cookies.remove('jwtToken')
+            Cookies.remove('jwt_token')
             history.replace('/login')
           }
           const changeThemeIcon = () => {
@@ -144,7 +144,7 @@ class NavbarHeader extends Component {
                     className="popup-content"
                   >
                     {close => (
-                      <div className="pop-div">
+                      <>
                         <p className="popup-title">
                           Are you sure, you want to logout
                         </p>
@@ -164,7 +164,7 @@ class NavbarHeader extends Component {
                             Confirm
                           </button>
                         </div>
-                      </div>
+                      </>
                     )}
                   </Popup>
                   <Popup
@@ -180,12 +180,10 @@ class NavbarHeader extends Component {
                         <FiLogOut className="nav-lighttheme-logo" />
                       </button>
                     }
-                    className={`popup-content ${
-                      themeChange ? 'dark-theme' : null
-                    }`}
+                    className="popup-content"
                   >
                     {close => (
-                      <div className="pop-div">
+                      <>
                         <p className="popup-title">
                           Are you sure, you want to logout
                         </p>
@@ -205,7 +203,7 @@ class NavbarHeader extends Component {
                             Confirm
                           </button>
                         </div>
-                      </div>
+                      </>
                     )}
                   </Popup>
                 </div>

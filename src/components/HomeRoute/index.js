@@ -17,7 +17,12 @@ const valData = {
 }
 
 class Home extends Component {
-  state = {starting: valData.initial, searchItem: '', videosList: {}}
+  state = {
+    starting: valData.initial,
+    searchItem: '',
+    videosList: {},
+    closeBanner: false,
+  }
 
   componentDidMount() {
     this.getFetchedData()
@@ -181,12 +186,15 @@ class Home extends Component {
   }
 
   render() {
-    const {searchItem} = this.state
+    const {searchItem, closeBanner} = this.state
     const booles = {home: true, trending: false, gaming: false, saved: false}
     return (
       <ContextOptions.Consumer>
         {value => {
           const {themeChange} = value
+          const closeContainer = () => {
+            this.setState({closeBanner: true})
+          }
           return (
             <>
               <NavbarHeader booles={booles} />
@@ -199,7 +207,9 @@ class Home extends Component {
                     }`}
                   >
                     <div
-                      className="right-sidebar-banner-container"
+                      className={`right-sidebar-banner-container ${
+                        closeBanner ? 'close-banner' : null
+                      }`}
                       data-testid="banner"
                     >
                       <div className="right-sidebar-description-container">
@@ -217,6 +227,7 @@ class Home extends Component {
                       </div>
                       <AiOutlineClose
                         className="right-sidebar-crosslogo"
+                        onClick={closeContainer}
                         data-testid="close"
                       />
                     </div>

@@ -33,6 +33,12 @@ class App extends Component {
     this.setState(prevs => ({hamburgerIcon: !prevs.hamburgerIcon}))
   }
 
+  onDeleteVideo = videos => {
+    const {savedVideos} = this.state
+    const filtered = savedVideos.filter(eachSet => videos.id !== eachSet.id)
+    this.setState({savedVideos: [...filtered]})
+  }
+
   render() {
     const {savedVideos, lightChange, hamburgerIcon} = this.state
 
@@ -45,6 +51,7 @@ class App extends Component {
           addToSavedList: this.addToSavedList,
           onLightDarkChange: this.onLightDarkChange,
           onHamBurger: this.onHamBurger,
+          onDeleteVideo: this.onDeleteVideo,
         }}
       >
         <Switch>
